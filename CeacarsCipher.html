@@ -2,84 +2,91 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
 
 <body>
-    <div id="container">
-        <div class="speech">Put the text to cipher in the input</div>
-        <div class="input">
-            <form id="form">
-                Text:
-                <input type="text" id="cypher" />
-                Offset:
-                <input type="number" value="7" id="offset" />
-                <br />
-                <br />
-                <br />
-                Finish:
-                <input type="text" id="finish" />
 
-                <br />
-                <br />
-                <br />
+  <body>
+    <center>
+      <h2>Ceasars Cipher</h2>
+      <br>
+      <label for="plaintext">Plaintext</label>
+      <br>
+      <br>
+      <input id="plaintext" type="text">
+      <br>
+      <br>
+      <label for="key">Key</label>
+      <br>
+      <br>
+      <input id="key" type ="number" placeholder="0">
+      <br>
+      <br>
+      <label for="encrypt">Encrypted Message</label>
+      <br>
+      <br>
+      <input id="encrypt" type="text" value="" readonly>
+      <br>
+    </center>
 
-            </form>
-        </div>
-    </div>
+  </body>
+  <script>
+    let plaintextInput = document.querySelector("#plaintext");
+    let keyInput = document.querySelector("#key");
+    let encryptInput = document.querySelector("#encrypt");
 
+    let plaintext = plaintextInput.value;
+    plaintextInput.addEventListener("input", characterEntered, false);
+    keyInput.addEventListener("input" , numberEntered , false);
+
+    function characterEntered(e) {
+      plaintext = e.target.value;
+      plaintext = plaintext.toLowerCase();
+      plaintext = plaintext.replace(/[^a-z]/, '');
+
+      e.target.value = plaintext;
+      startEncrypt();
+    }
+
+    function numberEntered(e){
+      startEncrypt();
+    }
+
+
+    function startEncrypt() {
+      let encrypted = "";
+      let key = keyInput.value? Number(keyInput.value) :0 ;
+      console.log(key);
+
+      for (letter of plaintext) {
+        encrypted += shiftLetter(letter, key);
+      }
+
+      console.log(encrypted)
+      encryptInput.value = encrypted;
+
+    }
+    startEncrypt();
+
+    function shiftLetter(letter, key) {
+      let newletter = "";
+
+      let lettercode = letter.charCodeAt(0);
+      let newlettercode = lettercode + (key % 26);
+
+      if (newlettercode < 97) {
+        newlettercode += 26;
+      } else if (newlettercode > 122) {
+        newlettercode -= 26;
+      }
+      newletter = String.fromCharCode(newlettercode);
+      return newletter;
+    }
+  </script>
 </body>
-<style>
-    body {
-        margin: 0;
-    }
 
-    #container {
-        width: 100%;
-        margin: auto;
-        min-height: 100vh;
-
-    }
-
-    .speech {
-        padding: 40px 0;
-        color: black;
-        text-shadow: 0 0 2px gray;
-        font: bold 36px 'Open Sans', sans-serif;
-        margin: auto;
-        width: 100%;
-        max-width: 580px;
-    }
-
-    .input {
-        margin: auto;
-        width: 100%;
-        max-width: 580px;
-    }
-
-    .input input {
-        box-sizing: border-box;
-        width: 100%;
-        padding: 5px;
-        font: 20px 'Open Sans', sans-serif;
-    }
-
-    .input input[type="range"] {
-        color: #444;
-        font: bold 19px sans-serif;
-    }
-
-    .input input[type="range"]:before {
-        content: "Faster";
-        text-shadow: 0 0 5px white;
-    }
-
-    .input input[type="range"]:after {
-        content: "Slower";
-        text-shadow: 0 0 5px white;
-    }
-</style>
 </html>
