@@ -5,10 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>RailFence Cipher</title>
 </head>
-
-
 <div class="btn-group1" role="group" aria-label="Basic example">
     <button onclick="location.href='http://localhost:3333/'" type="button" class="btn btn1">Return</button>
 </div>
@@ -17,28 +15,47 @@
         onclick="location.href='https://sites.google.com/site/communitioncom/bth-thi-12-khwam-plxdphay-bn-kherux-khay-laea-thekhnikh-kar-khea-rhas'"
         type="button" class="btn btn-secondary">information</button>
 </div>
-
-
 <body>
 
     <center class="center"
-        style="color: rgb(255, 255, 255); font-family: Verdana, Geneva, Tahoma, sans-serif; margin-top: 30px; background-color: rgb(16, 2, 139);">
-        <h2 style="font-size: 50px;">Rail Fence Cipher </h2>
-        <p>Enter the word that you want to ENCRYPT, then put "NUMBER" in a key form to make how many rail you need</p>
-        <p>ป้อนคำที่คุณต้องการเข้ารหัส จากนั้นใส่ "NUMBER" ในรูปแบบคีย์เพื่อสร้างจำนวนรางที่คุณต้องการ</p>
+        style="color: rgb(255, 255, 255); font-family: Verdana, Geneva, Tahoma, sans-serif; margin-top: 30px; background-color:#1e646e; border-radius: 20px; padding: 50px;">
+        <div class="Description">
+            <h2 class="Header">Rail Fence Cipher </h2>
+            <p>Enter the word that you want to ENCRYPT, then put "NUMBER" in a key form to make how many rail you need
+            </p>
+            <p>ป้อนคำที่คุณต้องการเข้ารหัส จากนั้นใส่ "NUMBER" ในรูปแบบคีย์เพื่อสร้างจำนวนรางที่คุณต้องการ</p>
+        </div>
+        <br>
+        <label
+            style=" font-family: 'Courier New', Courier, monospace ;font-size: 25px; font-weight: bold;">Plaintext</label>
+        <br>
+        <input id="p" name="p" type="text"
+            style=" font-family: 'Courier New', Courier, monospace ;font-size: 20px; font-weight: bold; margin-top: 10px; width: 500px; padding: 5px"
+            placeholder="Plese Touch My Ass">
+        <br>
+        <label
+            style=" font-family: 'Courier New', Courier, monospace ;font-size: 25px; font-weight: bold; margin-bottom: 10px;">Line
+            =</label>
+        <input id="key" name="key" type="text" value=" "
+            style=" font-family: 'Courier New', Courier, monospace ;font-size: 20px; font-weight: bold; margin-top: 10px; width: 400px; padding: 5px">
+        <br>
 
-        Plaintext<BR>
-        <TEXTAREA id="p" name="p" rows="4" cols="50">attack at dawn</TEXTAREA>
-        <P>line = <INPUT id="key" name="key" size="5" value=" " type="text"></P>
-        <P><INPUT name="btnEn" value="v Encrypt v" onclick="Encrypt()" type="button">
-            <INPUT name="btnDe" value="^ Decrypt ^" onclick="Decrypt()" type="button">
-        </P>
-        <P>Ciphertext<BR><TEXTAREA id="c" name="c" rows="4" cols="50"></TEXTAREA> </P>
+        <INPUT class="btn2" name="btnEn" value="v Encrypt v" onclick="Encrypt()" type="button">
+        <INPUT class="btn2" name="btnDe" value="^ Decrypt ^" onclick="Decrypt()" type="button">
+        <br>
+        <br>
+        <label
+            style=" font-family: 'Courier New', Courier, monospace ;font-size: 25px; font-weight: bold; margin-bottom: 10px; ">
+            Cipher Text</label>
+        <br>
+        <input id="c" name="c" type="text" valu="" readonly
+            style=" font-family: 'Courier New', Courier, monospace ;font-size: 20px; font-weight: bold; margin-top: 10px; width: 500px; padding: 5px">
+
     </center>
-
-
 </body>
-
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Sarabun&display=swap');
+</style>
 </html>
 
 <script>
@@ -82,6 +99,40 @@
 </script>
 
 <style>
+    .Description {
+        width: 1700px;
+        border: 5px solid #66fcf1;
+        border-radius: 20px;
+        text-align: center;
+        margin: auto;
+        margin-top: 30px;
+        font-size: 22px;
+        background-color: rgb(8, 2, 42);
+        font-family: 'Sarabun', sans-serif;
+
+    }
+
+    ::placeholder {
+        color: #b2a59f;
+        text-align: center;
+    }
+
+    .btn2 {
+        font-size: 20px;
+        cursor: pointer;
+        padding: 8px 12px;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: bold;
+        border-radius: 10px;
+        margin-top: 1%;
+    }
+
+    .Header {
+        margin-top: 10px;
+        font-size: 50px;
+        font-family: 'Courier New', Courier, monospace;
+    }
+
     .input-label {
         margin-bottom: 0;
         margin-top: 0;

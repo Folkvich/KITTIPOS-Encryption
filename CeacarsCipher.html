@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Caecars Cipher</title>
 </head>
 
 <body>
@@ -21,34 +21,43 @@
 
   <body>
     <center class="center"
-      style="color: rgb(255, 255, 255); font-family: Verdana, Geneva, Tahoma, sans-serif; margin-top: 30px; background-color: rgb(16, 2, 139);">
-      <h2 style="font-size: 50px;">Ceasars Cipher</h2>
-      <p>**แก้ Enter the word that you want to ENCRYPT, then put "NUMBER" in a key form to make how many rail you need</p>
-      <p>ป้อนคำที่คุณต้องการเข้ารหัส จากนั้นใส่ "NUMBER" ในรูปแบบคีย์เพื่อสร้างจำนวนรางที่คุณต้องการ</p>
+      style="color: rgb(255, 255, 255); font-family: Verdana, Geneva, Tahoma, sans-serif; margin-top: 25px; background-color: #1e646e; border-radius: 20px; padding: 25px;">
+      <div class = "Description">
+        <h2 class="Header">Ceacars Cipher</h2>
+        <p>Enter the letters you want to encode in the Plaintext field and select the KEY you want to encrypt. and will
+          show the encrypted text in the Encrypted Message field.</p>
+        <p>ป้อนตัวหนังสือที่ต้องการเข้ารหัสในช่อง Plaintext และเลือก KEY ที่ต้องการให้เข้ารหัส
+          และจะแสดงตัวหนังสือที่เข้ารหัสแล้วที่ช่อง Encrypted Message </p>
+
+      </div>
 
       <br>
-      <label for="plaintext">Plaintext</label>
+      <label for="plaintext" style=" font-family: 'Courier New', Courier, monospace ;font-size: 25px; font-weight: bold;">Plaintext</label>
       <br>
       <br>
-      <input id="plaintext" type="text">
+      <input id="plaintext" type="text" style=" font-family: 'Courier New', Courier, monospace ;font-size: 20px; font-weight: bold; padding: 5px;">
       <br>
       <br>
-      <label for="key">Key</label>
+      <label for="key" style=" font-family: 'Courier New', Courier, monospace ;font-size: 25px; font-weight: bold;">Key</label>
       <br>
       <br>
-      <input id="key" type="number" placeholder="0">
+      <input id="key" type="number" placeholder="0" style=" font-family: 'Courier New', Courier, monospace ;font-size: 20px; font-weight: bold; padding: 5px;">
       <br>
       <br>
-      <label for="encrypt">Encrypted Message</label>
+      <label for="encrypt" style=" font-family: 'Courier New', Courier, monospace ;font-size: 25px; font-weight: bold;">Encrypted Message</label>
       <br>
       <br>
-      <input id="encrypt" type="text" value="" readonly style="margin-bottom: 10px">
+      <input id="encrypt" type="text" value="" readonly style=" font-family: 'Courier New', Courier, monospace ; font-size: 20px;  font-weight: bold; padding: 5px;">
+      <br>
       <br>
     </center>
 
   </body>
 
 </body>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Sarabun&display=swap');
+  </style>
 
 </html>
 
@@ -107,6 +116,23 @@
 </script>
 
 <style>
+  .Description{
+    width :1700px;
+    border: 5px solid #66fcf1;
+    border-radius: 20px;
+    text-align: center;
+    margin: auto;
+    margin-top: 30px;
+    font-size: 22px;
+    background-color: rgb(8, 2, 42);
+    font-family: 'Sarabun', sans-serif;
+
+  }
+  .Header{
+    margin-top: 10px;
+    font-size: 50px;
+    font-family: 'Courier New', Courier, monospace;
+  }
   .input-label {
     margin-bottom: 0;
     margin-top: 0;
