@@ -22,7 +22,7 @@
 <body>
 
     <center class="center"
-        style="color: rgb(255, 255, 255); font-family: Verdana, Geneva, Tahoma, sans-serif; margin-top: 30px; background-color: rgb(38, 28, 104);">
+        style="color: rgb(255, 255, 255); font-family: Verdana, Geneva, Tahoma, sans-serif; margin-top: 30px; background-color: rgb(16, 2, 139);">
         <h2 style="font-size: 50px;">Rail Fence Cipher </h2>
         <p>Enter the word that you want to ENCRYPT, then put "NUMBER" in a key form to make how many rail you need</p>
         <p>ป้อนคำที่คุณต้องการเข้ารหัส จากนั้นใส่ "NUMBER" ในรูปแบบคีย์เพื่อสร้างจำนวนรางที่คุณต้องการ</p>
@@ -40,6 +40,46 @@
 </body>
 
 </html>
+
+<script>
+    function Encrypt() {
+        plaintext = document.getElementById("p").value.toLowerCase().replace(/[^a-z]/g, "");
+        if (plaintext.length < 1) { alert("please enter some plaintext"); return; }
+        var key = parseInt(document.getElementById("key").value);
+        if (key > Math.floor(2 * (plaintext.length - 1))) { alert("key is too large for the plaintext length."); return; }
+        ciphertext = "";
+        for (line = 0; line < key - 1; line++) {
+            skip = 2 * (key - line - 1); j = 0;
+            for (i = line; i < plaintext.length;) {
+                ciphertext += plaintext.charAt(i);
+                if ((line == 0) || (j % 2 == 0)) i += skip;
+                else i += 2 * (key - 1) - skip;
+                j++;
+            }
+        }
+        for (i = line; i < plaintext.length; i += 2 * (key - 1)) ciphertext += plaintext.charAt(i);
+        document.getElementById("c").value = ciphertext;
+    }
+
+    function Decrypt(f) {
+        ciphertext = document.getElementById("c").value.toLowerCase().replace(/[^a-z]/g, "");
+        if (ciphertext.length < 1) { alert("please enter some ciphertext (letters only)"); return; }
+        var key = parseInt(document.getElementById("key").value);
+        if (key > Math.floor(2 * (ciphertext.length - 1))) { alert("please enter 1 - 22."); return; }
+        pt = new Array(ciphertext.length); k = 0;
+        for (line = 0; line < key - 1; line++) {
+            skip = 2 * (key - line - 1); j = 0;
+            for (i = line; i < ciphertext.length;) {
+                pt[i] = ciphertext.charAt(k++);
+                if ((line == 0) || (j % 2 == 0)) i += skip;
+                else i += 2 * (key - 1) - skip;
+                j++;
+            }
+        }
+        for (i = line; i < ciphertext.length; i += 2 * (key - 1)) pt[i] = ciphertext.charAt(k++);
+        document.getElementById("p").value = pt.join("");
+    }
+</script>
 
 <style>
     .input-label {
@@ -129,43 +169,3 @@
         border-radius: 10px;
     }
 </style>
-
-<script>
-    function Encrypt() {
-        plaintext = document.getElementById("p").value.toLowerCase().replace(/[^a-z]/g, "");
-        if (plaintext.length < 1) { alert("please enter some plaintext"); return; }
-        var key = parseInt(document.getElementById("key").value);
-        if (key > Math.floor(2 * (plaintext.length - 1))) { alert("key is too large for the plaintext length."); return; }
-        ciphertext = "";
-        for (line = 0; line < key - 1; line++) {
-            skip = 2 * (key - line - 1); j = 0;
-            for (i = line; i < plaintext.length;) {
-                ciphertext += plaintext.charAt(i);
-                if ((line == 0) || (j % 2 == 0)) i += skip;
-                else i += 2 * (key - 1) - skip;
-                j++;
-            }
-        }
-        for (i = line; i < plaintext.length; i += 2 * (key - 1)) ciphertext += plaintext.charAt(i);
-        document.getElementById("c").value = ciphertext;
-    }
-
-    function Decrypt(f) {
-        ciphertext = document.getElementById("c").value.toLowerCase().replace(/[^a-z]/g, "");
-        if (ciphertext.length < 1) { alert("please enter some ciphertext (letters only)"); return; }
-        var key = parseInt(document.getElementById("key").value);
-        if (key > Math.floor(2 * (ciphertext.length - 1))) { alert("please enter 1 - 22."); return; }
-        pt = new Array(ciphertext.length); k = 0;
-        for (line = 0; line < key - 1; line++) {
-            skip = 2 * (key - line - 1); j = 0;
-            for (i = line; i < ciphertext.length;) {
-                pt[i] = ciphertext.charAt(k++);
-                if ((line == 0) || (j % 2 == 0)) i += skip;
-                else i += 2 * (key - 1) - skip;
-                j++;
-            }
-        }
-        for (i = line; i < ciphertext.length; i += 2 * (key - 1)) pt[i] = ciphertext.charAt(k++);
-        document.getElementById("p").value = pt.join("");
-    }
-</script>
