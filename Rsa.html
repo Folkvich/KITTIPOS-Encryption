@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" style="background-color: rgb(8, 2, 42);">
+<html lang="en" style="background-color: #08022a;">
 
 <head>
     <title>RSA Encryption</title>
@@ -9,7 +9,7 @@
 <div class="btn-group1" role="group" aria-label="Basic example">
     <button onclick="location.href='http://localhost:3333/'" type="button" class="btn btn1">Return</button>
 </div>
-<div class="btn-group" role="group" aria-label="Basic example">
+<div class="btn-group" role="group" aria-label="Basic example" >
     <button
         onclick="location.href='https://sites.google.com/site/communitioncom/bth-thi-12-khwam-plxdphay-bn-kherux-khay-laea-thekhnikh-kar-khea-rhas'"
         type="button" class="btn btn-secondary">information</button>
@@ -17,54 +17,61 @@
 
 <body>
     <center class="center1"
-        style="color: rgb(255, 255, 255); font-family: Verdana, Geneva, Tahoma, sans-serif; margin-top: 30px; background-color: rgb(16, 2, 139);">
-        <h1 style="text-align: center; font-size: 50px;">RSA Algorithm</h1>
-        <h2 style="text-align: center;">Implemented Using HTML & Javascript</h2>
-        <p>**แก้ Enter the word that you want to ENCRYPT, then put "NUMBER" in a key form to make how many rail you need
-        </p>
-        <p>ป้อนคำที่คุณต้องการเข้ารหัส จากนั้นใส่ "NUMBER" ในรูปแบบคีย์เพื่อสร้างจำนวนรางที่คุณต้องการ</p>
+        style="color: rgb(255, 255, 255); font-family: Verdana, Geneva, Tahoma, sans-serif; margin-top: 30px; background-color: #10028b;border: 5px dashed #f59090;">
+
+        <div style="background-color: skyblue; background: -webkit-linear-gradient(left,rgba(83, 3, 3, 0),rgb(162, 0, 255)); ">
+        <h1 style="text-align: center; font-size: 50px; text-shadow: 0.1em 0.1em #08022a;" >RSA Algorithm</h1>
+        <h2 style="text-align: center; text-shadow: 0.1em 0.1em #08022a;">Implemented Using HTML & Javascript</h2>
+        <u>**แก้ Enter the word that you want to ENCRYPT, then put "NUMBER" in a key form to make how many rail you need
+        </u><br>
+        <br><u>ป้อนคำที่คุณต้องการเข้ารหัส จากนั้นใส่ "NUMBER" ในรูปแบบคีย์เพื่อสร้างจำนวนรางที่คุณต้องการ</u>
+        </div>
+
         <hr>
         <table class="center">
             <tr>
-                <td>Enter P:</td>
-                <td><input type="number" value="" id="p"></td>
+                <td align=right>Enter P:</td>
+                <td><input type="number" value="0" id="p" style=" font-family: 'Courier New', Courier, monospace ;font-size: 20px; font-weight: bold; padding: 5px;"></td>
+                <!-- <input id="plaintext" type="text" > -->
+                <br>
             </tr>
             <tr>
-                <td>Enter Q :</td>
-                <td><input type="number" value="" id="q"></p>
+                <td align=right>Enter Q :</td>
+                <td><input type="number" value="0" id="q" style=" font-family: 'Courier New', Courier, monospace ;font-size: 20px; font-weight: bold; padding: 5px;"></p>
                 </td>
             </tr>
             <tr>
-                <td>Enter the Message:<br>[A=1, B=2,...]</td>
-                <td><input type="number" value="" id="msg"></p>
+                <td align=right>Enter the Message:<br>[A=1, B=2,...]</td>
+                <td><input type="number" value="0" id="msg" style=" font-family: 'Courier New', Courier, monospace ;font-size: 20px; font-weight: bold; padding: 5px;"></p>
                 </td>
             </tr>
             <tr>
-                <td>Public Key(N):</td>
+                <td align=right>Public Key(N):</td>
                 <td>
-                    <p id="publickey(N)"></p>
+                    <p id="publickey(N)" ></p>
                 </td>
             </tr>
             <tr>
-                <td>Exponent(e):</td>
+                <td align=right>Exponent(e):</td>
                 <td>
                     <p id="exponent(e)"></p>
                 </td>
             </tr>
             <tr>
-                <td>Private Key(d):</td>
+                <td align=right>Private Key(d):</td>
                 <td>
                     <p id="privatekey(d)"></p>
                 </td>
             </tr>
             <tr>
-                <td>Cipher Text(c):</td>
+                <td align=right>Cipher Text(c):</td>
                 <td>
                     <p id="ciphertext(ct)"></p>
                 </td>
             </tr>
             <tr>
-                <td><button onclick="RSA();">Apply RSA</button></td>
+                <td></td>
+                <td><button onclick="RSA();" style="float:center; width: 150px;height: 50px;font-size: 20px;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;border-radius:11px;" >Apply RSA</button></td>
             </tr>
         </table>
     </center>
@@ -105,6 +112,7 @@
 </script>
 
 <style>
+    
     .center {
         margin-left: auto;
         margin-right: auto;
@@ -196,4 +204,5 @@
         margin-top: 20px;
         border-radius: 10px;
     }
+    
 </style>
