@@ -20,52 +20,55 @@
     style="color: rgb(255, 255, 255); font-family: Verdana, Geneva, Tahoma, sans-serif; margin-top: 25px; background-color: #1e646e; border-radius: 20px; padding: 25px;">
 
         <div class = "Description">
-        <h1 style="text-align: center; font-size: 50px; text-shadow: 0.1em 0.1em #08022a;" >RSA Algorithm</h1>
-        <h2 style="text-align: center; text-shadow: 0.1em 0.1em #08022a;">Implemented Using HTML & Javascript</h2>
-        <u>**แก้ Enter the word that you want to ENCRYPT, then put "NUMBER" in a key form to make how many rail you need
-        </u><br>
-        <br><u>ป้อนคำที่คุณต้องการเข้ารหัส จากนั้นใส่ "NUMBER" ในรูปแบบคีย์เพื่อสร้างจำนวนรางที่คุณต้องการ</u>
+        <h1 style="text-align: center; font-size: 50px; text-shadow: 0.1em 0.1em #08022a;" >RSA (Rivest–Shamir–Adleman) </h1>
+        <!-- <h2 style="text-align: center; text-shadow: 0.1em 0.1em #08022a;"> Rivest–Shamir–Adleman </h2> -->
+        <p>
+            *Enter the numbers P,Q,Meessage, then press the Apply RSA button and the program will calculate the RSA encoding.
+        </p>
+        <p>
+                *ใส่ตัวเลข P,Q,Meessage  จากนั้นกดปุ่ม Apply RSA แล้วโปรแกรมจะทำการคำนวณการเข้ารหัสแบบ RSA 
+        </p>
         <p></p>
         </div>
 
         <hr>
         <table class="center">
             <tr>
-                <td align=right>Enter P:</td>
-                <td><input type="number" value="0" id="p" style=" font-family: 'Courier New', Courier, monospace ;font-size: 20px; font-weight: bold; padding: 5px;"></td>
+                <td align=right  style=" font-family: 'Courier New', Courier, monospace ;font-size: 25px; font-weight: bold;">Enter P:</td>
+                <td><input placeholder="0" type="number"  id="p" style=" font-family: 'Courier New', Courier, monospace ;font-size: 20px; font-weight: bold; padding: 5px;"></td>
                 <!-- <input id="plaintext" type="text" > -->
                 <br>
             </tr>
             <tr>
-                <td align=right>Enter Q :</td>
-                <td><input type="number" value="0" id="q" style=" font-family: 'Courier New', Courier, monospace ;font-size: 20px; font-weight: bold; padding: 5px;"></p>
+                <td align=right style=" font-family: 'Courier New', Courier, monospace ;font-size: 25px; font-weight: bold;">Enter Q:</td>
+                <td><input placeholder="0" type="number"  id="q" style=" font-family: 'Courier New', Courier, monospace ;font-size: 20px; font-weight: bold; padding: 5px;"></p>
                 </td>
             </tr>
             <tr>
-                <td align=right>Enter the Message:<br>[A=1, B=2,...]</td>
-                <td><input type="number" value="0" id="msg" style=" font-family: 'Courier New', Courier, monospace ;font-size: 20px; font-weight: bold; padding: 5px;"></p>
+                <td align=right style=" font-family: 'Courier New', Courier, monospace ;font-size: 25px; font-weight: bold;">Enter the Message:<br>[A=1, B=2,...]</td>
+                <td><input placeholder="0" type="number"  id="msg" style=" font-family: 'Courier New', Courier, monospace ;font-size: 20px; font-weight: bold; padding: 5px;"></p>
                 </td>
             </tr>
             <tr>
-                <td align=right>Public Key(N):</td>
+                <td align=right  style=" font-family: 'Courier New', Courier, monospace ;font-size: 25px; font-weight: bold;">Public Key(N):</td>
                 <td>
                     <p id="publickey(N)" ></p>
                 </td>
             </tr>
             <tr>
-                <td align=right>Exponent(e):</td>
+                <td align=right style=" font-family: 'Courier New', Courier, monospace ;font-size: 25px; font-weight: bold;">Exponent(e):</td>
                 <td>
                     <p id="exponent(e)"></p>
                 </td>
             </tr>
             <tr>
-                <td align=right>Private Key(d):</td>
+                <td align=right style=" font-family: 'Courier New', Courier, monospace ;font-size: 25px; font-weight: bold;">Private Key(d):</td>
                 <td>
                     <p id="privatekey(d)"></p>
                 </td>
             </tr>
             <tr>
-                <td align=right>Cipher Text(c):</td>
+                <td align=right style=" font-family: 'Courier New', Courier, monospace ;font-size: 25px; font-weight: bold;">Cipher Text(c):</td>
                 <td>
                     <p id="ciphertext(ct)"></p>
                 </td>
@@ -77,6 +80,9 @@
         </table>
     </center>
 </body>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Sarabun&display=swap');
+    </style>
 
 </html>
 
@@ -124,6 +130,12 @@
     background-color: rgb(8, 2, 42);
     font-family: 'Sarabun', sans-serif;
 
+  }
+
+  .Header{
+    margin-top: 10px;
+    font-size: 50px;
+    font-family: 'Courier New', Courier, monospace;
   }
     
     .center {
